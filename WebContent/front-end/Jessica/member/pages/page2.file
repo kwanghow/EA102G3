@@ -1,0 +1,28 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
+
+<%if (rowsPerPage<rowNumber) {%>
+	<nav aria-label="Page navigation example">
+	  <ul class="pagination justify-content-center">
+	  	<%if(pageIndex>=rowsPerPage){%>
+	  		<li class="page-item">
+		      <a class="page-link" href="<%=request.getRequestURI()%>?whichPage=1&order_state=${param.order_state}" tabindex="-1" aria-disabled="true">&laquo;</a>
+		    </li>
+		    <li class="page-item"><a class="page-link" href="<%=request.getRequestURI()%>?whichPage=<%=whichPage-1%>&order_state=${param.order_state}">前一頁</a></li>
+		<%}%>
+		
+	    <li class="page-item active disabled" aria-current="page">
+	    	<a class="page-link">
+	    		共<%=rowNumber%>筆，
+	    		第<%=whichPage%>/<%=pageNumber%>頁	    		
+	    	</a>
+	    </li>
+	    
+	    <%if(pageIndex<pageIndexArray[pageNumber-1]){%>
+		    <li class="page-item"><a class="page-link" href="<%=request.getRequestURI()%>?whichPage=<%=whichPage+1%>&order_state=${param.order_state}">下一頁</a></li>
+		    <li class="page-item">
+		      <a class="page-link" href="<%=request.getRequestURI()%>?whichPage=<%=pageNumber%>&order_state=${param.order_state}">&raquo;</a>
+		    </li>
+	    <%}%>    
+	  </ul>
+	</nav>
+<%}%>

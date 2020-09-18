@@ -1,0 +1,51 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <html>
+<head>
+<title>GYMSHOP Products: Home</title>  
+<style type="text/css">
+ *{
+ 	font-family:Microsoft JhengHei;
+ }
+</style>
+</head>
+<body>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pagination-area d-flex justify-content-center margin-top-50">
+                        <ul>
+                            <li style="<c:if test='<%=whichPage<=1%>'>display:none</c:if>">
+                                <span class="next page-bumber" onclick="guide(<%=whichPage-1%>)">
+	                                <i class="fa fa-angle-left">
+	                                </i> 
+	                                 	Prev
+                                </span>
+                            </li>
+                            
+                            <%for(int i = 1 ; i <= pageNumber; i++){%>
+                        	 	<li>
+                           		 	<span class="page-bumber <c:if test='<%=whichPage==i%>'>current</c:if>" name="pageNumberSpan" onclick="guide(<%=i%>)"><%=i%></span>
+                      		 	 </li>
+                            <%}%>
+                         <%--     
+                             --%>
+                             
+	                            <li style="<c:if test='<%=whichPage>=pageNumber%>'>display:none</c:if>">
+	                                <span class="next page-bumber" onclick="guide(<%=whichPage+1%>)">
+		                                	<i class="fa fa-angle-right">
+		                                	</i>
+	                                				Next 
+	                                </span>
+                            <input type="hidden" value="<%=request.getRequestURI()%>" id="pageUrl">
+	                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+  </body>
+  <script>
+  var pageUrl = document.getElementById("pageUrl");
+  function guide(i){
+	  document.location.href = pageUrl.value + "?whichPage=" + i;
+  }
+  </script>
+</html>

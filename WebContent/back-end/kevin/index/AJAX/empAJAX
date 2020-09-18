@@ -1,0 +1,171 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
+
+<script>
+				let data = {};
+				$(document).on('click','#empManage',function(){
+					data = {};
+					data.action="DisplayAllAJAX";
+					$('#emp').html(`<div class="row" style="margin-bottom: 15px">
+							<div class="col-1">
+								<b>員工編號</b>
+							</div>
+							<div class="col-1">
+								<b>員工姓名</b>
+							</div>
+							<div class="col-2">
+								<b>員工帳號</b>
+							</div>
+							<div class="col-1">
+								<b>員工密碼</b>
+							</div>
+							<div class="col-2">
+								<b>員工電話</b>
+							</div>
+							<div class="col-3">
+								<b>員工信箱</b>
+							</div>
+							<div class="col-2">
+								<b>修改</b>
+							</div>
+						</div>`);
+					
+					$.ajax({
+						 type: "POST",
+						 url: "<%=request.getContextPath()%>/front-end/authority/authority.do",
+						 data: data,
+						 dataType: "json",
+						 success: function (data){	
+						//console.log(data);
+						 $.each(data,function(i){
+							 $('#emp').append(`<form class="empDetail `+data[i].emp_id+`" METHOD="post"
+										ACTION="<%=request.getContextPath()%>/front-end/authority/authority.do">
+										<div class="row" style="margin-bottom: 8px" id="emp">
+											<div class="col-1">`+data[i].emp_id+`</div>
+											<div class="col-1">`+data[i].emp_name+`</div>
+											<div class="col-2">`+data[i].emp_account+`</div>
+											<div class="col-1">`+data[i].emp_psw+`</div>
+											<div class="col-2">`+data[i].emp_phone+`</div>
+											<div class="col-3">`+data[i].emp_email+`</div>
+											<div class="col-2">
+												<button 
+													type="button" class="btn btn-success `+data[i].emp_id+`" 
+													name="action"
+													data-toggle="modal" 
+													data-target="#exampleModal"
+													value="DisplayOneAJAX"
+													data-emp_id=`+data[i].emp_id+`
+													data-emp_name=`+data[i].emp_name+`
+													data-emp_account=`+data[i].emp_account+`
+													data-emp_psw=`+data[i].emp_psw+`
+													data-emp_phone=`+data[i].emp_phone+`
+													data-emp_email=`+data[i].emp_email+`
+													data-action="DisplayOneAJAX"
+													>修改</button>
+											</div>
+										</div>
+										</form>`);	
+					 	}); 
+						 
+					     },
+			            error: function(){alert("AJAX-class發生錯誤囉!")}
+			        });
+					
+					
+					
+					
+					
+				});
+				
+
+				$(document).on('click',"button[name='action']",function(){
+					data = {};
+					// 修改data
+					data.emp_id = $(this).data("emp_id");
+					data.emp_name = $(this).data("emp_name");
+					data.emp_account = $(this).data("emp_account");
+					data.emp_psw = $(this).data("emp_psw");
+					data.emp_email = $(this).data("emp_email");
+					data.emp_phone = $(this).data("emp_phone");
+					data.action = $(this).data("action");
+// 					console.log("data", data)
+					
+					// 清空表單資料
+					$('#exampleModal form > div:nth-child(1) label').text('')
+					$('#exampleModal form > div:nth-child(2) input').val('')
+					$('#exampleModal form > div:nth-child(3) input').val('')
+					$('#exampleModal form > div:nth-child(4) input').val('')
+					$('#exampleModal form > div:nth-child(5) input').val('')
+					$('#exampleModal form > div:nth-child(6) input').val('')
+					
+					// 將按鈕資料放入談窗
+					$('#exampleModal form > div:nth-child(1) label').text(data.emp_id)
+					$('#exampleModal form > div:nth-child(2) input').val(data.emp_name)
+					$('#exampleModal form > div:nth-child(3) input').val(data.emp_account)
+					$('#exampleModal form > div:nth-child(4) input').val(data.emp_psw)
+					$('#exampleModal form > div:nth-child(5) input').val(data.emp_email)
+					$('#exampleModal form > div:nth-child(6) input').val(data.emp_phone)
+					$.ajax({
+						 type: "POST",
+						 url: "<%=request.getContextPath()%>/front-end/authority/authority.do",
+						 data: data,
+						 dataType: "json",
+						 success: function (data){	
+							//放入權限
+				 			$("input[name='features']").each(function(){
+				 				$(this).prop("checked",false);
+				 			if ($.inArray($(this).val(),data[0].authorityList)!==-1){
+							 $(this).prop("checked",true);
+				 			}
+				 			}); 
+					     },
+			            error: function(){alert("AJAX-class發生錯誤囉!")}
+			        });
+					
+					
+					
+					
+			                  
+					$(".modal-footer").on('click',"#update",function(){
+					data.emp_id = $('#exampleModal form > div:nth-child(1) label').text();
+					data.emp_name = $('#exampleModal form > div:nth-child(2) input').val();
+					data.emp_account = $('#exampleModal form > div:nth-child(3) input').val();
+					data.emp_psw = $('#exampleModal form > div:nth-child(4) input').val();
+					data.emp_email = $('#exampleModal form > div:nth-child(5) input').val();
+					data.emp_phone = $('#exampleModal form > div:nth-child(6) input').val();
+					data.action = $(this).data("action");
+					var features = new Array();
+					$('input:checkbox:checked[name="features"]').each(function(i) { features[i] = this.value; });
+					data.features =features;
+					// 更新資料
+					$.ajax({
+						 type: "POST",
+						 url: "<%=request.getContextPath()%>/front-end/authority/authority.do",
+						 data: data,
+						 dataType: "json",
+						 success: function (data){					 		
+				 			$('.' + data.emp_id + ' .row > div:nth-child(2)').text(data.emp_name);
+							$('.' + data.emp_id + ' .row > div:nth-child(3)').text(data.emp_account);
+							$('.' + data.emp_id + ' .row > div:nth-child(4)').text(data.emp_psw);
+							$('.' + data.emp_id + ' .row > div:nth-child(5)').text(data.emp_email);
+							$('.' + data.emp_id + ' .row > div:nth-child(6)').text(data.emp_phone);
+							
+							// 將資料寫入按鈕
+							$('button.'+ data.emp_id).data("emp_id",data.emp_id);
+							$('button.'+ data.emp_id).data("emp_name",data.emp_name);
+							$('button.'+ data.emp_id).data("emp_account",data.emp_account);
+							$('button.'+ data.emp_id).data("emp_psw",data.emp_psw);
+							$('button.'+ data.emp_id).data("emp_email",data.emp_email);
+							$('button.'+ data.emp_id).data("emp_phone",data.emp_phone);
+							
+							// 關閉彈窗
+							$('[data-dismiss="modal"]').click();
+					 		
+							
+					     },
+			            error: function(){alert("AJAX-class發生錯誤囉!")}
+			        })
+					});
+			});
+				
+				
+				</script>

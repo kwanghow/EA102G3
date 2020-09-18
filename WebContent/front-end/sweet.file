@@ -1,0 +1,53 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+	let account = "${memLogIn.member_Id}";
+	$('.main-nav .nav .m1').click(function(){
+		if(!account){
+			event.preventDefault();
+			// 跳彈窗	 
+			Swal.fire({
+			  title: '沒有權限!',
+			  text: "會員請先登入!",
+			  icon: 'error',
+			}).then((result) => {
+			  if (result.value) {
+					$(location).attr('href', '<%=request.getContextPath()%>/front-end/logIn2.jsp');
+			  }
+			})
+			// 延遲跳轉
+// 			setTimeout(function(){
+<%-- 				$(location).attr('href', '<%=request.getContextPath()%>/front-end/logIn2.jsp'); --%>
+// 			}, 2000);
+		}
+	});
+	
+	let account2 = "${coachLogIn.coach_Id}";
+	$('.main-nav .nav .c1').click(function(){
+		if(!account2){
+			event.preventDefault();
+			// 跳彈窗	 
+			Swal.fire({
+			  title: '沒有權限!',
+			  text: "不是教練不能進入操作! 趕快申請加入吧!",
+			  icon: 'error',
+			}).then((result) => {
+			  if (result.value) {
+					$(location).attr('href', '<%=request.getContextPath()%>/front-end/logIn2.jsp');
+			  }
+			})
+		}
+	});
+	
+	 $(document).ready(function(){	   
+		   let ok = $("#isOk").val();
+		   let okVal = $("#okVal").val();
+		   if(ok == "No"){
+			   Swal.fire(okVal,'是否還有欄位未填寫完成?','error');
+		   }
+		   if(ok == "Yes"){
+			   Swal.fire(okVal,'太棒了','success');
+		   }
+	 });
+</script>

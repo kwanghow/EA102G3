@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EA102G3｜探索課程</title>
+<!--------------------------------------------------------------------------------------------------->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+
+<!-- CSS Files -->
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"> <!-- v4.3.1 -->
+<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.css"> <!-- v4.7.0 -->
+<link rel="stylesheet" href="../static/css/templatemo-training-studio.css"> <!-- 主題CSS -->
+
+<!-- JS Files -->
+<!-- jQuery -->
+<script src="../static/js/jquery-2.1.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="../static/js/popper.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- Plugins -->
+<script src="../static/js/scrollreveal.min.js"></script>
+<script src="../static/js/waypoints.min.js"></script>
+<script src="../static/js/jquery.counterup.min.js"></script>
+<script src="../static/js/imgfix.min.js"></script> 
+<script src="../static/js/mixitup.js"></script> 
+<script src="../static/js/accordions.js"></script>    
+<!-- Global Init -->
+<script src="../static/js/custom.js"></script>
+
+<style>
+    /*測試nav下拉*/
+    .dropdown-menu li:hover .sub-menu {visibility: visible;}
+    .dropdown:hover .dropdown-menu {display: block;}
+    /*調整標題*/
+    #bg-video{
+        min-height: 30vh;
+        max-height: 30vh;
+    }
+    .main-banner .caption{
+        top: 60%;
+    }
+    .main-banner .caption h2 {
+        font-size: 40px;
+    }
+    .video-overlay {
+        bottom: 0;
+    }
+    /*調整區塊間的高度*/
+    .section-heading {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    /*副標的麵包屑*/
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .breadcrumb a{
+        color: white;
+    }
+    .breadcrumb-item.active {
+        color: lightgray;
+    }
+    /*字體主題色*/
+    .theme-colors{
+        color: #ed563b;
+    }
+    /*回到最上面*/
+    .back-to-top{
+        font-size: 30px;
+        color: #ed563b;
+    }
+    #back-to-top{
+        position: fixed;
+        bottom: 10vh;
+        right: 20vh;
+    }
+    .btn-circle-xl {
+        width: 60px;
+        height: 60px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 35px;
+        border: 1px solid #ed563b;
+    }
+    /*調整內容上距*/
+    #section-content{
+        margin-top: 50px;
+    }
+</style>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<link href="../static/css/hamburgers.css" rel="stylesheet">
+<!-- sweetalert -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
+
+<style>
+    #our-classes {
+        margin-bottom: 0px;
+    }
+    /*調整課程與課程間的高度*/
+    .trainer-item {
+        margin-bottom: 30px;
+    }
+    /*改變愛心跟結帳的大小*/
+    .social-icons{
+        font-size: 18px;
+    }
+    .social-icons li{
+        cursor: pointer;
+    }
+    #trainers h4 a{
+        color: black;
+    }
+    #trainers a{
+        color: #ed563b;
+    }
+
+    /*--------------------*/
+    /*訂單狀態選項*/
+    #order-state ul li{
+        margin-bottom: 20px; display: inline-block; width: 100%;
+    }
+    #order-state ul li a{        
+        text-transform: capitalize;
+        width: 100%;
+        padding: 15px 15px;
+        display: inline-block;
+        background-color: #fff;
+        border: none;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        border-radius: 5px;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    #order-state ul li a span{
+        margin-left: 15%;
+    }
+    .nav-tabs { border: none; }
+    .nav-tabs  .nav-link, .nav-tabs { color: #232d39; }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active { color: #ed563b; }
+
+    #our-classes form{
+        padding: 30px 30px;
+    }
+
+    .itme a{
+        margin-right: 10px;
+        background-color: lightgray;
+    }
+
+    #clearFilter{
+        text-align: center; color: #fff; background-color: #ed563b; border:none;
+    }
+
+    #trainers .trainer-item p{
+        margin-bottom: 0px;
+        color: black;
+    }
+
+</style>
+
+</head>
+<body>
+
+<!----- Preloader Start ----->
+<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
+
+<!----- Header Area ----->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">我就<em> 健</em></a>
+                    <!-- menu -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#">首頁</a></li>
+                        <li class="scroll-to-section"><a href="#"  class="active">探索課程</a></li>
+                        <li class="scroll-to-section"><a href="#">學員專區</a></li>
+                        <li class="scroll-to-section"><a href="#">教練專區</a></li>
+                        <li class="scroll-to-section"><a href="#">會員專區</a></li>
+                        <!-- 測試下拉 -->
+                        <li class="scroll-to-section dropdown">
+                            <a href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">Dropdown</a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action2</a></li>
+                                <li style="display: none;"><a class="dropdown-item" href="#">Action2</a></li>
+                            </ul>
+                        </li>
+                        <!-- 會員登入訊息 -->
+                        <li class="main-button"><a href="#">Sign Up</a></li>
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Main Banner Area ----->
+<div class="main-banner" id="top">
+    <!-- Banner Img -->
+    <img src="../static/img/course-banner.png" id="bg-video">
+    <div class="video-overlay header-text">
+        <!-- 麵包屑 -->
+        <div class="caption">
+            <h2>EXPLORE PERSONAL <em>COURSE</em></h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">HOME</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">COURSE</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- 篩選課程 開始↓ ----->
+<section class="section" id="our-classes">  <!-- collapse -->
+    <div class="container">
+        <div class="row my-4 align-items-center">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading">
+                    <h2>EXPLORE <em>PERSONAL COURSE</em></h2>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <button class="hamburger hamburger--spring" type="button" data-toggle="collapse" data-target="#searchForm">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>            
+            </div>
+        </div>
+
+        <form class="bg-light mb-5 collapse" id="searchForm">
+            <div class='row filter mb-2'>
+                <div class="col-10">
+                    <span>已選條件：</span>                
+                    <span class="itme"></span>                    
+                </div>
+                <div class="col-2 text-right">
+                    <button id="clearFilter">清除</button> 
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-6">                
+                    <div class="form-group">
+                        <label for="cname">課程名稱</label>
+                        <input type="text" class="form-control" placeholder="請輸入課程名" id="cname">
+                    </div>
+                </div>
+                <div class="col-md-3">                
+                    <div class="form-group">
+                        <label for="loc">上課地點</label>
+                        <fieldset>
+                            <!-- 縣市選單 -->
+                            <select class="county custom-select" id="loc"></select>
+                        </fieldset>    
+                    </div>
+                </div>
+                <div class="col-md-3">                
+                    <div class="form-group">
+                        <label for="sex">教練性別</label>
+                        <select class="form-control" id="sex">
+                            <option>選擇性別</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <label for="order-state">課程種類</label>
+            <!-- 選項 開始↓ -->
+            <div id="order-state">
+                <ul class="row nav nav-tabs" role="tablist"  id="tabs">
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link active" data-toggle="tab" role="tab">
+                            <span>💪增肌訓練</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🧗TRX懸吊訓練</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🧘基礎瑜珈</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🏋重量訓練</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🤸核心訓練</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🚴燃脂飛輪</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🥩體態雕塑</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🏃減脂瘦身課程</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🥊基礎拳擊</span>
+                        </a>
+                    </li>
+                    <li class="col-sm-3 nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab">
+                            <span>🏊游泳教學</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 選項 結束↑ -->
+        </form>
+    </div>
+</section>
+<!----- 篩選課程 結束↑ ----->
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- 課程區塊 開始↓ ----->
+<section class="section" id="trainers">
+    <div class="container">
+
+        <div class="row">
+
+            <!-- 課程開始 -->
+            <div class="col-lg-4">
+                <div class="trainer-item">
+                    <div class="image-thumb">
+                        <img src="../static/img/first-trainer.jpg" alt="">
+                    </div>
+                    <div class="down-content">
+                        <div class="course-type">
+                            <span class="border badge-pill">體態雕塑</span>
+                        </div>
+                        <h4>
+                            <a href="">🥇私人教練最佳好評💯！增肌健身健體減脂</a>
+                        </h4>
+                        <p><i class="fa fa-usd" aria-hidden="true"></i>　2,000 ~ 20,000</p>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i>　桃園市中壢區</p>
+                        <hr>
+                        <div class="row align-items-center">
+                            <div class="col-3"><img class="rounded-circle img-fluid float-left" src="http://placehold.it/50x50"></div>
+                            <div class="col-5 theme-colors"><a href="">凱文</a></div>
+                            <div class="col-2 addHeart" value="0">
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-2 addCart" value="0">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 課程結束 -->
+
+        </div>
+
+    </div>
+</section>
+<!----- 課程區塊 結束↑ ----->
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Footer Area ----->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; 2020 Training Studio
+                    - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--------------------------------------------------------------------------------------------------->
+<script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.0/dist/tw-city-selector.min.js"></script>
+<script type="text/javascript">
+
+new TwCitySelector({
+    el: '.city-selector-set',
+    elCounty: '.county', // 在 el 裡查找 element
+});
+//<!--------------------------------------------------------------------------------------------------->
+
+var obj = {};
+
+$(function(){ 
+    
+    $("#cname").change(function() {        
+        var val = $(this).val();
+        if('cname' in obj){
+            var a = obj.cname;
+            for(var i=0; i<a.length; i++){
+                if( a[i] === val) return;                           
+            }
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='cname'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        }else{
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='cname'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        }
+    });
+    
+    $("#loc").change(function(){
+        var val = $(this).val();
+        if('loc' in obj){
+            var a = obj.loc;
+            for(var i=0; i<a.length; i++){
+                if( a[i] === val) return;                           
+            }
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='loc'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        }else{
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='loc'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        } 
+    });
+    
+    $("#sex").change(function(){
+        var val = $(this).val();        
+        if('sex' in obj){
+            var a = obj.sex;
+            for(var i=0; i<a.length; i++){
+                if( a[i] === val) return;                           
+            }
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='sex'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        }else{
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='sex'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        }
+    });
+    
+    $("#order-state a").click(function(){
+        var val = $(this).children("span").html().substring(2);
+        if('exp_type' in obj){
+            var a = obj.exp_type;
+            for(var i=0; i<a.length; i++){
+                if( a[i] === val) return;                           
+            }
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='exp_type'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        }else{
+            var domItem = `<a onclick=deletes('${val}') rel='${val}' name='exp_type'>×  <span>${val}</span></a>`;
+            $(".itme").append(domItem);
+        }
+    });    
+    
+
+    $('.itme').bind('DOMNodeInserted', function(e) {
+        var name = $(e.target).attr('name');
+        var value =  $(e.target).attr('rel');        
+        console.log("name: "+ name);
+        console.log("value: "+ value);
+        
+        if(name in obj){
+            obj[name].push(value);
+            console.log(obj);
+        }else{
+            obj[name] = [value];
+            console.log(obj);
+        }
+        
+//         $.ajax({
+//             type: 'POST',
+//             url: 'http://localhost:8081/EA102G3/testAjax',
+//             data: obj,
+//             success: function (data){
+// //              var jsonObj = JSON.parse(data);
+// //              console.log(jsonObj);
+//             },
+//             error: function(xhr, ajaxOptions, thrownError){
+//                 console.log(xhr.status);
+//                 console.log(thrownError);
+//             }
+//         });
+    });
+    
+    $('.itme').bind('DOMNodeRemoved', function(e) {
+        var name = $(e.target).attr('name');
+        var value =  $(e.target).attr('rel');        
+        console.log("name: "+ name);
+        console.log("value: "+ value);
+
+        var a = obj[name];
+        for(var i=0; i<a.length; i++){
+            if( a[i] == value ){
+              a.splice(i,1);
+              i--;
+            }
+          }
+        if(a.length === 0){
+            delete obj[name];
+        }
+        console.log(obj);
+        
+//         $.ajax({
+//             type: 'POST',
+//             url: 'http://localhost:8081/EA102G3/testAjax',
+//             data: obj,
+//             success: function (data){
+// //              var jsonObj = JSON.parse(data);
+// //              console.log(jsonObj);
+//             },
+//             error: function(xhr, ajaxOptions, thrownError){
+//                 console.log(xhr.status);
+//                 console.log(thrownError);
+//             }
+//         });
+        
+    });
+
+    $('#clearFilter').click(function(e){
+        e.preventDefault();
+        $(".itme").html('');
+    });
+
+   
+});
+
+function deletes(val){
+    $(".filter").find("a[rel='"+val+"']").remove();
+}
+
+// <!---------------------------------------------------------->
+$(function(){ 
+    // hamburger icon 的切換
+    $("button.hamburger").on("click", function(){
+        $(this).toggleClass("is-active");
+    });
+
+
+    // 愛心特效變化
+    $('.addHeart').click(function(){
+        var val = $(this).val();
+        if(val % 2 === 0){
+            $(this).html('<i class="fa fa-heart" aria-hidden="true"></i>');
+            $(this).css("color","#ed563b");
+            $(this).val('1');
+            swal('漂亮！', '成功加入課程最愛', 'success');
+        }else{
+            $(this).html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+            $(this).css("color","");
+            $(this).val('0');
+        };                    
+    });
+});
+
+</script>
+
+</body>
+</html>

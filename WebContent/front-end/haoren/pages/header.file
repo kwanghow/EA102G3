@@ -1,0 +1,120 @@
+<%@ page pageEncoding="BIG5" %>
+    <!-- preloader area start -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader area end -->
+
+    <!-- search Popup -->
+    <div class="body-overlay" id="body-overlay"></div>
+    <div class="search-popup" id="search-popup">
+        <form action="index.html" class="search-form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search.....">
+            </div>
+            <button type="submit" class="submit-btn"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <!-- //. search Popup -->
+<!--     navbar start -->
+    <div class="zarxio-navbar">
+        <nav class="navbar navbar-area navbar-expand-lg black-bg nav-style-02">
+            <div class="container nav-container">
+                <div class="responsive-mobile-menu">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#billatrail_main_menu" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="bar1"></span>
+                        <span class="bar2"></span>
+                        <span class="bar3"></span>
+                    </button>
+                </div>
+                <div class="logo">
+                    <a href="index.html"> <img src="${pageContext.request.contextPath}/front-end/product/assets/img/logo.png" alt="logo"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="billatrail_main_menu">
+                    <ul class="navbar-nav menu-open">
+                        <li class="menu-item-has-children">
+                            <a href="#">Home</a>
+                            <ul class="sub-menu">
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                                <li><a href="index-3.html">Home 3</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="hidden-md"><a href="about.html">About</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Classes</a>
+                            <ul class="sub-menu">
+                                <li><a href="classes.html">Class</a></li>
+                                <li><a href="class-details.html">Class Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Trainer</a>
+                            <ul class="sub-menu">
+                                <li><a href="trainer.html">Trainer</a></li>
+                                <li><a href="trainer-details.html">Trainer Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children current-menu-item">
+                            <a href="#">InGym商城</a>
+                            <ul class="sub-menu">
+                                <li><a href="${pageContext.request.contextPath}/front-end/product/list-all-product.jsp">商城首頁</a></li>
+                                <li><a href="${pageContext.request.contextPath}/front-end/product/add-product.jsp">賣家上架</a></li>
+                                <li><a href="${pageContext.request.contextPath}/front-end/product/list-product-by-memId.jsp">賣家商品管理</a></li>
+                                <li><a href="${pageContext.request.contextPath}/front-end/purchase-order/list-order-by-memId-seller.jsp">賣家訂單管理</a></li>
+                                <li><a href="${pageContext.request.contextPath}/front-end/purchase-order/list-order-by-memId-buyer.jsp">買家訂單管理</a></li>
+                                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                                <li><a href="payment.html">Payment</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Pages</a>
+                            <ul class="sub-menu">
+                                <li class="d-block d-xl-none"><a href="about.html">About Us</a></li>
+                                <li><a href="service.html">Service</a></li>
+                                <li><a href="signin.html">Sign In</a></li>
+                                <li><a href="signup.html">Sign Up</a></li>
+                                <li><a href="404.html">404</a></li>
+                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right-part">
+                    <ul>
+                        <li class="search" id="search">
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </li>
+                        <li>
+                            <div class="hamberger-area d-none d-lg-block">
+                                <div class="menu-toggle hamburger hamburger--squeeze is-active">
+                                    <div class="hamburger-box">
+                                        <div class="hamburger-inner"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+<!--     navbar end -->
+

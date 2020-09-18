@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="161" height="160" viewBox="0 0 161 160">
+    <defs>
+        <path id="a" d="M35.797 60.15h28.565a2.747 2.747 0 0 1 2.747 2.747v1.785a4.532 4.532 0 0 1-4.532 4.532H44.86a9.064 9.064 0 0 1-9.064-9.064z"/>
+        <filter id="b" width="103.2%" height="111%" x="-1.6%" y="-5.5%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation=".5"/>
+            <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0.396093081 0 0 0 0 0.67741897 0 0 0 0 0.860280797 0 0 0 1 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <rect width="127" height="24" x="17" y="107" fill="#009FDE" fill-opacity=".153" opacity=".498" rx="12"/>
+        <g transform="rotate(15 -152.075 402.203)">
+            <path fill="#E5F1F9" d="M37.083 0c7.472 0 13.53 6.058 13.53 13.53v2.005c0 6.043-3.962 11.161-9.43 12.898l-5.849 9.358a.501.501 0 0 1-.925-.242l-.4-8.485-20.479.001C6.058 29.065 0 23.007 0 15.535V13.53C0 6.058 6.058 0 13.53 0h23.553z"/>
+            <circle cx="13.029" cy="15.034" r="2.004" fill="#AAD2EC"/>
+            <circle cx="25.056" cy="15.034" r="2.004" fill="#AAD2EC"/>
+            <circle cx="37.083" cy="15.034" r="2.004" fill="#AAD2EC"/>
+        </g>
+        <g transform="translate(18.85 29.156)">
+            <path fill="#669BBD" d="M33.325 68.665H70.13v31.758H33.325z"/>
+            <g transform="rotate(-20 49.062 6.802)">
+                <path fill="#017DB8" d="M18.928 48.427l6.574-.23a2.197 2.197 0 0 1 2.273 2.12l1.723 49.361a2.197 2.197 0 0 1-2.688 2.219l-6.323-1.454a2.197 2.197 0 0 1-1.703-2.051L16.81 50.714a2.197 2.197 0 0 1 2.12-2.287z"/>
+                <circle cx="24.62" cy="24.852" r="24.613" fill="#FFF" fill-opacity=".247" stroke="#56A5D8" stroke-width="3"/>
+            </g>
+            <rect width="27.192" height="8.515" x="26.184" y="68.665" fill="#AAD2EC" rx="4.257"/>
+            <path fill="#FFF" d="M47.058 70.313h2.61a2.61 2.61 0 0 1 0 5.219h-2.61a.275.275 0 0 1-.274-.275v-4.67c0-.151.123-.274.274-.274z" opacity=".5"/>
+            <rect width="27.192" height="8.515" x="27.282" y="76.905" fill="#AAD2EC" rx="4.257"/>
+            <path fill="#FFF" d="M47.608 78.553h2.609a2.61 2.61 0 0 1 0 5.218h-2.61a.275.275 0 0 1-.274-.274v-4.67c0-.151.123-.274.275-.274z" opacity=".5"/>
+            <rect width="27.192" height="8.515" x="28.656" y="85.145" fill="#AAD2EC" rx="4.257"/>
+            <path fill="#FFF" d="M48.98 86.793h2.61a2.61 2.61 0 0 1 0 5.218h-2.61a.275.275 0 0 1-.274-.274v-4.67c0-.151.123-.274.275-.274z" opacity=".5"/>
+            <rect width="27.192" height="7.691" x="30.853" y="93.385" fill="#AAD2EC" rx="3.845"/>
+            <path fill="#FFF" d="M50.904 94.758h2.609a2.61 2.61 0 0 1 0 5.219h-2.61a.275.275 0 0 1-.274-.275v-4.67c0-.15.123-.274.275-.274z" opacity=".5"/>
+            <path fill="#AAD2EC" d="M58.348 75.532h34.346c6.956 0 12.94 4.92 14.283 11.746.152.77.334 1.497.546 2.181 1.091 3.514 2.263 7.569 3.516 12.166H71.62c-7.918 0-14.426-6.247-14.75-14.158-.12-2.9.373-6.878 1.479-11.935z"/>
+            <path fill="#AAD2EC" d="M64.217 60.15a4.754 4.754 0 0 1 4.571 3.45c1.315 4.613 2.346 7.517 3.09 8.711.917 1.47 2.54 2.725 4.867 3.765L57.94 77.904l2.12-14.174a4.202 4.202 0 0 1 4.156-3.58z"/>
+            <use fill="#AAD2EC" xlink:href="#a"/>
+            <use fill="#000" filter="url(#b)" xlink:href="#a"/>
+            <circle cx="64.637" cy="64.545" r="4.12" fill="#AAD2EC"/>
+        </g>
+        <g fill="#AAD2EC" transform="rotate(29 -4.267 133.068)">
+            <rect width="2.1" height="8.075" x="2.69" y=".994" rx="1.05" transform="rotate(-30 3.74 5.031)"/>
+            <rect width="2.1" height="8.075" x="14.378" y=".287" rx="1.05"/>
+            <rect width="2.1" height="8.075" x="27.52" y="4.157" rx="1.05" transform="scale(-1 1) rotate(-42 0 82.621)"/>
+        </g>
+    </g>
+</svg>

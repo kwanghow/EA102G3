@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EA102G3｜課程購物車</title>
+<!--------------------------------------------------------------------------------------------------->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+
+<!-- CSS Files -->
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"> <!-- v4.3.1 -->
+<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.css"> <!-- v4.7.0 -->
+<link rel="stylesheet" href="../static/css/templatemo-training-studio.css"> <!-- 主題CSS -->
+
+<!-- JS Files -->
+<!-- jQuery -->
+<script src="../static/js/jquery-2.1.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="../static/js/popper.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- Plugins -->
+<script src="../static/js/scrollreveal.min.js"></script>
+<script src="../static/js/waypoints.min.js"></script>
+<script src="../static/js/jquery.counterup.min.js"></script>
+<script src="../static/js/imgfix.min.js"></script> 
+<script src="../static/js/mixitup.js"></script> 
+<script src="../static/js/accordions.js"></script>    
+<!-- Global Init -->
+<script src="../static/js/custom.js"></script>
+
+<style>
+    /*測試nav下拉*/
+    .dropdown-menu li:hover .sub-menu {visibility: visible;}
+    .dropdown:hover .dropdown-menu {display: block;}
+    /*調整標題*/
+    #bg-video{
+        min-height: 30vh;
+        max-height: 30vh;
+    }
+    .main-banner .caption{
+        top: 60%;
+    }
+    .main-banner .caption h2 {
+        font-size: 40px;
+    }
+    .video-overlay {
+        bottom: 0;
+    }
+    /*調整區塊間的高度*/
+    .section-heading {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    /*副標的麵包屑*/
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .breadcrumb a{
+        color: white;
+    }
+    .breadcrumb-item.active {
+        color: lightgray;
+    }
+    /*字體主題色*/
+    .theme-colors{
+        color: #ed563b;
+    }
+    /*回到最上面*/
+    .back-to-top{
+        font-size: 30px;
+        color: #ed563b;
+    }
+    #back-to-top{
+        position: fixed;
+        bottom: 10vh;
+        right: 20vh;
+    }
+    .btn-circle-xl {
+        width: 60px;
+        height: 60px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 35px;
+        border: 1px solid #ed563b;
+    }
+    /*調整內容上距*/
+    #section-content{
+        margin-top: 50px;
+    }
+</style>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!-- form驗證 -->
+<link rel="stylesheet" href="assets/css/form-validation.css">
+<style>
+
+    /*裁切課程相片*/
+    .course-img{
+        width: 128px;
+        height: 0;
+        padding-bottom: 72px;
+        position: relative;
+        overflow: hidden;
+    }
+    .course-img img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        transform:translate(-50%,-50%);          
+    }
+
+    /*訂單狀態選項*/
+    #order-state ul li{
+        margin-bottom: 30px; display: inline-block; width: 100%;
+    }
+    #order-state ul li a{
+    text-transform: capitalize;
+        width: 100%;
+        padding: 10px 10px;
+        display: inline-block;
+        background-color: #fff;
+        border: none;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        border-radius: 5px;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    #order-state ul li a i{ 
+        font-size: 35px; 
+        margin: 10px;
+    }
+    .nav-tabs { border: none; }
+    .nav-tabs  .nav-link, .nav-tabs { color: #232d39; }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active { color: #007bff; }
+
+    /*課程分類的膠囊樣式*/
+    .badge-theme{
+        background-color: transparent;
+        color: #ed563b;
+        border: 1px solid #ed563b;
+    }
+    /*課程右邊的價格與堂數*/
+    .order-right{
+        border:1px solid orange;
+        border-radius: 5px;
+    }
+    #backBtn{
+        background-color: white;
+        color: #ed563b;
+        border: 1px solid #ed563b;
+    }
+
+    .card-footer {
+        background-color: transparent; 
+        border-top: 0px; 
+    }
+
+    .star-area li{
+        list-style: none;
+        float: left;
+        font-size: 36px;
+        color: #F4DA40;
+        cursor: pointer;
+        display: inline-block;
+    }
+    .star-area ul{
+        /*display: inline-block;*/
+    }
+</style>
+</head>
+
+<body>
+
+<!----- Preloader Start ----->
+<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
+
+<!----- Header Area ----->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">我就<em> 健</em></a>
+                    <!-- menu -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#">首頁</a></li>
+                        <li class="scroll-to-section"><a href="#"  class="active">探索課程</a></li>
+                        <li class="scroll-to-section"><a href="#">學員專區</a></li>
+                        <li class="scroll-to-section"><a href="#">教練專區</a></li>
+                        <li class="scroll-to-section"><a href="#">會員專區</a></li>
+                        <!-- 測試下拉 -->
+                        <li class="scroll-to-section dropdown">
+                            <a href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">Dropdown</a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action2</a></li>
+                                <li style="display: none;"><a class="dropdown-item" href="#">Action2</a></li>
+                            </ul>
+                        </li>
+                        <!-- 會員登入訊息 -->
+                        <li class="main-button"><a href="#">Sign Up</a></li>
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Main Banner Area ----->
+<div class="main-banner" id="top">
+    <!-- Banner Img -->
+    <img src="course-banner.png" id="bg-video">
+    <div class="video-overlay header-text">
+        <!-- 麵包屑 -->
+        <div class="caption">
+            <h2>訂單<em>紀錄</em></h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                    <li class="breadcrumb-item"><a href="#">會員專區</a></li>
+                    <li class="breadcrumb-item"><a href="#">訂單</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">私人課程訂單</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<!----- Back to Top ----->
+<!-- <button id="back-to-top" class="btn btn-circle-xl"><a href="#top" class="back-to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></button> -->
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<section class="section" id="section-content">
+  <div class="container">
+
+    <!-- 訂單狀態 開始↓ -->
+    <div id="order-state">
+        <ul class="row nav nav-tabs text-center" role="tablist">
+            <li class="col-md nav-item">
+                <a class="nav-link active" data-toggle="tab" role="tab">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i><br>
+                    <span>全部</span>
+                </a>
+            </li>
+            <li class="col-md nav-item">
+                <a class="nav-link" data-toggle="tab" role="tab">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i><br>
+                    <span>等待教練確認</span>
+                </a>
+            </li>
+            <li class="col-md nav-item">
+                <a class="nav-link" data-toggle="tab" role="tab">
+                    <i class="fa fa-usd" aria-hidden="true"></i><br>
+                    <span>等待付款</span>
+                </a>
+            </li>
+            <li class="col-md nav-item">
+                <a class="nav-link" data-toggle="tab" role="tab">
+                    <i class="fa fa-check" aria-hidden="true"></i><br>
+                    <span>訂單完成</span>
+                </a>
+            </li>
+            <li class="col-md nav-item">
+                <a class="nav-link" data-toggle="tab" role="tab">
+                    <i class="fa fa-times" aria-hidden="true"></i><br>
+                    <span>訂單取消</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 訂單狀態 結束↑ -->
+
+    <!-- 訂單內容 開始↓ -->
+    <div class="row" id="order-content">
+        <div class="col tab-content">
+
+            <!-- 單一訂單 開始↓ -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="row mx-0">
+                        訂單編號： <span>123456</span> <div class="col-1"></div>
+                        訂單日期： <span>2020/4/10 13:00</span> <div class="col-1"></div>
+                        訂單狀態： <span>已完成</span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row mr-0">
+                        <div class="col-2 align-self-center">
+                            <img src="https://fakeimg.pl/128x75/">
+                        </div>
+                        <div class="col-6 align-self-center">
+                            <h6 class="card-title">🥇私人教練最佳好評💯！增肌健身健體減脂 </h6>
+                            <div class="card-text badge badge-pill badge-theme">體態雕塑</div>                
+                        </div>
+                        <div class="card-text col-4 align-self-center p-2 order-right">
+                            <div class="mb-1">
+                                付款金額：<span>NT$ 20,000</span>
+                                <a href=""><small>(查看明細)</small></a>
+                            </div>
+                            <div class="mt-1">堂　　數：已約 <span>10</span>堂，共 <span>20</span>堂</div>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">            
+                    <!-- 按鈕選項 -->
+                    <div class="row align-self-center">
+                        <div class="col-8 align-self-center"></div>
+                        <div class="col-2 contact-form align-self-center">
+                            <!-- Button trigger modal -->
+                            <button class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModalCenter" id="backBtn">評價</button>  
+                        </div>
+                        <div class="col-2 contact-form align-self-center">
+                            <a href="#payment"><button class="btn btn-primary btn-lg btn-block" id="goCheckoutBtn">前往課程</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 單一訂單 結束↑ -->
+
+        </div>
+    </div>
+    <!-- 訂單內容 結束↑ -->
+
+<form>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">評價此課程</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <label for="star-area">評分</label>
+                <input type="hidden" name="com_star" value="0" class="com_star_value">
+                <div class="star-area"><ul><li>☆</li><li>☆</li><li>☆</li><li>☆</li><li>☆</li></ul></div>
+            </div>
+            <div class="modal-body">
+                <div class="form-group text-left">
+                    <label for="comment-area">請寫下您的評論</label>
+                    <textarea class="form-control" rows="3" id="comment-area"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" class="com-submit-btn">評價</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+  </div>
+</section>
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Footer Area ----->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; 2020 Training Studio
+                    - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!-- 驗證 -->
+<script src="assets/js/form-validation.js"></script>
+
+
+<script type="text/javascript">
+
+$(function(){
+
+// hamburger icon 的切換
+    $("button.hamburger").on("click", function(){
+        $(this).toggleClass("is-active");
+    });
+
+    $("#exampleModalCenter").modal('show');
+
+    $(".star-area > i").click(function(){
+        var inputVal = $(".com_star_value").val();
+        console.log("inputVal="+inputVal);
+        var clickStar = $(this).attr("class");
+        console.log("clickStar="+ typeof clickStar);
+        var index = parseInt(clickStar.substring(clickStar.length-1, clickStar.length));
+        console.log("index="+ index);
+        var starArea = $(this).parent('span');
+        console.log("媽媽="+$(starArea).attr('class'));
+
+        var str = " ";
+        for(var i=1; i<=index; i++){
+            str+='<i class="fa fa-star star'+i+'" aria-hidden="true"></i>';
+        }        
+        for(var j=(index+1); j<=5; j++){
+            str+='<i class="fa fa-star-o star'+j+'" aria-hidden="true"></i>';
+        }
+        console.log("str="+str);
+
+        $(starArea).html(str);
+        // $(starArea).css("color","yellow");
+        $(inputVal).val(index);
+    });    
+});
+
+var stark = "☆";
+var stars = "★"
+$(function(){
+    //未點擊之前 li標籤本身及前面全部添加樣式
+    $(".star-area li").on("mouseenter", function () {
+        $(this).text(stars).prevAll().text(stars);
+        $(this).nextAll().text(stark);
+    });
+    //鼠標離開事件，讓所有的星星為空心；
+    $(".star-area li").on("mouseleave", function () {
+        $(".star-area li").text(stark);
+        //讓class 為current的 前面所有的星星為實體，後面的星星為空
+        $(".star-area li.current").text(stars).prevAll().text(stars);
+    })
+    //註冊點擊事件，讓當前點擊的前面的星星全為實體；
+    $(".star-area li").on("click",function () {
+        $(this).addClass("current").siblings().removeClass("current");
+    })
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<%@ page pageEncoding="BIG5" %>
+
+<!--     breadcrumb area -->
+    <div class="breadcrumb-style-1" style="background-image:url(${pageContext.request.contextPath}/front-end/product/assets/img/bg/shop.png);">
+        <div class="breadcrumb-inner">
+            <h1 class="page-title">Shop</h1>
+            <ul class="page-list margin-bottom-10">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
+        </div>
+    </div>
+<!--     breadcrumb area end -->

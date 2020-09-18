@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EA102G3｜課程購物車</title>
+<!--------------------------------------------------------------------------------------------------->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+
+<!-- CSS Files -->
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"> <!-- v4.3.1 -->
+<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.css"> <!-- v4.7.0 -->
+<link rel="stylesheet" href="../static/css/templatemo-training-studio.css"> <!-- 主題CSS -->
+
+<!-- JS Files -->
+<!-- jQuery -->
+<script src="../static/js/jquery-2.1.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="../static/js/popper.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- Plugins -->
+<script src="../static/js/scrollreveal.min.js"></script>
+<script src="../static/js/waypoints.min.js"></script>
+<script src="../static/js/jquery.counterup.min.js"></script>
+<script src="../static/js/imgfix.min.js"></script> 
+<script src="../static/js/mixitup.js"></script> 
+<script src="../static/js/accordions.js"></script>    
+<!-- Global Init -->
+<script src="../static/js/custom.js"></script>
+<style>
+    /*測試nav下拉*/
+    .dropdown-menu li:hover .sub-menu {visibility: visible;}
+    .dropdown:hover .dropdown-menu {display: block;}
+    /*調整標題*/
+    #bg-video{
+        min-height: 30vh;
+        max-height: 30vh;
+    }
+    .main-banner .caption{
+        top: 60%;
+    }
+    .main-banner .caption h2 {
+        font-size: 40px;
+    }
+    .video-overlay {
+        bottom: 0;
+    }
+    /*調整區塊間的高度*/
+    .section-heading {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    /*副標的麵包屑*/
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .breadcrumb a{
+        color: white;
+    }
+    .breadcrumb-item.active {
+        color: lightgray;
+    }
+    /*字體主題色*/
+    .theme-colors{
+        color: #ed563b;
+    }
+    /*回到最上面*/
+    .back-to-top{
+        font-size: 30px;
+        color: #ed563b;
+    }
+    #back-to-top{
+        position: fixed;
+        bottom: 10vh;
+        right: 20vh;
+    }
+    .btn-circle-xl {
+        width: 60px;
+        height: 60px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 35px;
+        border: 1px solid #ed563b;
+    }
+    /*調整內容上距*/
+    #section-content{
+        margin-top: 50px;
+    }
+</style>
+
+<!--------------------------------------------------------------------------------------------------->
+<link rel="stylesheet" type="text/css" href="../static/css/form-validation.css">
+<script src="../static/js/form-validation.js"></script>
+<style>
+    /*裁切課程相片*/
+    .course-img{
+        width: 80px;
+        height: 0;
+        padding-bottom: 80px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .course-img img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        transform:translate(-50%,-50%);          
+    }
+    button a{
+        color: white;
+    }
+    #backBtn{
+        background-color: white;
+        color: #ed563b;
+        border: 1px solid #ed563b;
+    }
+    #step{
+        margin-top: 60px;
+    }
+
+.errorMsg {
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!----- Preloader Start ----->
+<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
+
+<!----- Header Area ----->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">我就<em> 健</em></a>
+                    <!-- menu -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#">首頁</a></li>
+                        <li class="scroll-to-section"><a href="#"  class="active">探索課程</a></li>
+                        <li class="scroll-to-section"><a href="#">學員專區</a></li>
+                        <li class="scroll-to-section"><a href="#">教練專區</a></li>
+                        <li class="scroll-to-section"><a href="#">會員專區</a></li>
+                        <!-- 測試下拉 -->
+                        <li class="scroll-to-section dropdown">
+                            <a href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">Dropdown</a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action2</a></li>
+                                <li style="display: none;"><a class="dropdown-item" href="#">Action2</a></li>
+                            </ul>
+                        </li>
+                        <!-- 會員登入訊息 -->
+                        <li class="main-button"><a href="#">Sign Up</a></li>
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Main Banner Area ----->
+<div class="main-banner" id="top">
+    <!-- Banner Img -->
+    <img src="course-banner.png" id="bg-video">
+    <div class="video-overlay header-text">
+        <!-- 麵包屑 -->
+        <div class="caption">
+            <h2>COURSE <em>CHECKOUT</em></h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">COACH</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">COURSE</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!----- Content Area ----->
+<section class="section" id="section-content">
+    <div class="container">
+        <!-- <div class="row"></div> -->
+
+        <!-- 小標 -->
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3"><div class="section-heading mb-0">
+                <h2>填寫<em> 課程內容</em></h2>
+                <img src="../static/img/line-dec.png" alt="">
+            </div></div>
+        </div>
+
+        <!-- form開始 -->
+        <form class="needs-validation" novalidate>
+        <div class="row mx-5 mt-1 mb-4 p-4 bg-light">
+            <div class="col-md-12 order-md-1">
+                  <div class="row my-3">
+                     <div class="col-md-8 mb-3">                      
+                        <label for="cname">課程名稱</label>　
+                        <span class="errorMsg">請填寫課程名稱。</span>
+                        <input type="text" class="form-control" id="cname" name="cname" required>
+                        
+                     </div>
+                     <div class="col-md-4 mb-3">
+                        <label for="exp_id">課程類別</label>　
+                        <span class="errorMsg">請選擇課程類別。 </span>
+                        <select class="custom-select d-block w-100" id="exp_id" name="exp_id" required>
+                           <option value="">Choose...</option>
+                           <option value="exp_id123">exp_id123</option>
+                        </select>
+                     </div>
+                  </div>
+
+<!--------------------------------------------->
+                <div class="card">
+                    <div class="card-header bg-white">
+                        價格方案　<span class="errorMsg">請至少填寫1種方案。 </span>
+                    </div>
+                    <div class="card-body">
+                      <!-- 一堂課開始 -->
+                      <div class="row align-items-end">
+                         <div class="col-md">
+                            <label for="lesson">堂數</label>　<span class="errorMsg">堂數需大於0。 </span>
+                            <input type="text" class="form-control" id="lesson" name="lesson" required>
+                         </div>
+                         <div class="col-md">
+                            <label for="price">總價</label>　<span class="errorMsg">價格需大於0。 </span>
+                            <input type="text" class="form-control" id="price" name="price" required>
+                         </div>
+                         <div class="col-md">
+                            <label for="onePrice">單堂價格</label>
+                            <input type="text" class="form-control" id="onePrice" name="onePrice" value="" readonly>
+                            <div class="invalid-feedback"></div>
+                         </div>
+                         <div class="col-1 mb-4 text-center"><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
+                         <div class="col-1 mb-4 text-center"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                      </div>
+                      <!-- 一堂課結束 -->
+                    </div>
+                </div>                
+<!--------------------------------------------->
+                  <div class="row city-selector-set my-3">
+                     <div class="col-md-3 mb-3">
+                        <label for="county">縣市</label> 
+                        <span class="errorMsg">請選擇。 </span>                           
+                        <select class="county custom-select d-block w-100" id="county"></select>
+                     </div>
+
+                     <div class="col-md-3 mb-3">
+                        <label for="district">區域</label> 
+                        <span class="errorMsg">請選擇。 </span>                    
+                        <select class="district custom-select d-block w-100" id="district"></select>
+                     </div>
+
+                     <div class="col-md-6 mb-3">
+                        <label for="address">地址</label> 
+                        <span class="errorMsg">請填寫完整地址。 </span>  
+                        <input type="text" class="form-control" id="address" name="address" required>
+                     </div>
+                  </div>
+<!--------------------------------------------->
+                  <div class="row mt-1 my-3">
+                      <div class="col-4">
+                          課程圖片1(封面)
+                      </div>
+                      <div class="col-4">
+                          課程圖片2
+                      </div>
+                      <div class="col-4">
+                          課程圖片3
+                      </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col mb-3 mx-3 custom-file">
+                        <input type="file" class="custom-file-input" id="customFile1">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    <div class="col mb-3 mx-3 custom-file">
+                        <input type="file" class="custom-file-input" id="customFile2">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                    <div class="col mb-3 mx-3 custom-file">
+                        <input type="file" class="custom-file-input" id="customFile3">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                        <img id="img1" class="img-fluid" src="../static/img/no-image.png">
+                    </div>
+                    <div class="col">
+                        <img id="img2" class="img-fluid" src="../static/img/no-image.png">
+                    </div>
+                    <div class="col">
+                        <img id="img3" class="img-fluid" src="../static/img/no-image.png">
+                    </div>
+                  </div>
+
+<!--------------------------------------------->
+
+                  <div class="row mt-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="intro">課程簡介</label>
+                            <textarea class="form-control" id="intro" name="intro" rows="5" onkeyup="autogrow(this);" placeholder="請輸入您的課程內容文字簡述，於1000字內"></textarea>
+                        </div>
+                    </div>
+                  </div>
+<!--------------------------------------------->
+            </div>
+        </div>
+        <div class="row mx-5 mb-4 pb-5 px-5 text-center">
+          <div class="col-4"></div>
+          <div class="col">
+            <button class="btn" id="clear">清除</button>
+          </div>
+          <div class="col">
+            <input class="btn" type="submit" name="" value="送出">
+          </div>
+          <div class="col-4"></div>
+        </div>
+        </form>
+        <!-- form開始 -->
+
+  </div>
+</section>
+
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Footer Area ----->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; 2020 Training Studio
+                    - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!-- 縣市選單用 -->
+<script src="https://cdn.jsdelivr.net/npm/tw-city-selector@2.1.1/dist/tw-city-selector.min.js"></script>
+
+<script>
+    new TwCitySelector({
+        el: '.city-selector-set',
+        elCounty: '.county', // 在 el 裡查找 element
+        elDistrict: '.district', // 在 el 裡查找 element
+        elZipcode: '.zipcode' // 在 el 裡查找 element
+    });
+
+var a = 'customFile'+1;
+$('#customFile1').on('change', function(e){
+      const file = this.files[0];
+      
+      const fr = new FileReader();
+      fr.onload = function (e) {
+        $('#img1').attr('src', e.target.result);
+      };   
+      
+      fr.readAsDataURL(file);   
+});
+$('#customFile2').on('change', function(e){
+      const file = this.files[0];
+      
+      const fr = new FileReader();
+      fr.onload = function (e) {
+        $('#img2').attr('src', e.target.result);
+      };   
+      
+      fr.readAsDataURL(file);   
+});
+$('#customFile3').on('change', function(e){
+      const file = this.files[0];
+      
+      const fr = new FileReader();
+      fr.onload = function (e) {
+        $('#img3').attr('src', e.target.result);
+      };   
+      
+      fr.readAsDataURL(file);   
+});
+
+
+function autogrow(textarea){
+    var adjustedHeight=textarea.clientHeight;
+    adjustedHeight=Math.max(textarea.scrollHeight,adjustedHeight);
+    if (adjustedHeight>textarea.clientHeight){
+        textarea.style.height=adjustedHeight+'px';
+    }
+}
+
+
+
+</script>
+
+</body>
+</html>

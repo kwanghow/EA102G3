@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EA102G3｜課程詳情</title>
+<!--------------------------------------------------------------------------------------------------->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+
+<!-- CSS Files -->
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"> <!-- v4.3.1 -->
+<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.css"> <!-- v4.7.0 -->
+<link rel="stylesheet" href="../static/css/templatemo-training-studio.css"> <!-- 主題CSS -->
+
+<!-- JS Files -->
+<!-- jQuery -->
+<script src="../static/js/jquery-2.1.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="../static/js/popper.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- Plugins -->
+<script src="../static/js/scrollreveal.min.js"></script>
+<script src="../static/js/waypoints.min.js"></script>
+<script src="../static/js/jquery.counterup.min.js"></script>
+<script src="../static/js/imgfix.min.js"></script> 
+<script src="../static/js/mixitup.js"></script> 
+<script src="../static/js/accordions.js"></script>    
+<!-- Global Init -->
+<script src="../static/js/custom.js"></script>
+
+<style>
+    /*測試nav下拉*/
+    .dropdown-menu li:hover .sub-menu {visibility: visible;}
+    .dropdown:hover .dropdown-menu {display: block;}
+    /*調整標題*/
+    #bg-video{
+        min-height: 30vh;
+        max-height: 30vh;
+    }
+    .main-banner .caption{
+        top: 60%;
+    }
+    .main-banner .caption h2 {
+        font-size: 40px;
+    }
+    .video-overlay {
+        bottom: 0;
+    }
+    /*調整區塊間的高度*/
+    .section-heading {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    /*副標的麵包屑*/
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .breadcrumb a{
+        color: white;
+    }
+    .breadcrumb-item.active {
+        color: lightgray;
+    }
+    /*字體主題色*/
+    .theme-colors{
+        color: #ed563b;
+    }
+    /*回到最上面*/
+    .back-to-top{
+        font-size: 30px;
+        color: #ed563b;
+    }
+    #back-to-top{
+        position: fixed;
+        bottom: 10vh;
+        right: 20vh;
+    }
+    .btn-circle-xl {
+        width: 60px;
+        height: 60px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 35px;
+        border: 1px solid #ed563b;
+    }
+    /*調整內容上距*/
+    #section-content{
+        margin-top: 50px;
+    }
+</style>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!-- sweetalert -->
+<script src="http://mishengqiang.com/sweetalert/js/sweetalert-dev.js"></script>
+<link rel="stylesheet" type="text/css" href="http://mishengqiang.com/sweetalert/css/sweetalert.css">
+
+<style>
+
+    /*課程分類的膠囊樣式*/
+    .badge-theme{
+        background-color: transparent;
+        color: #ed563b;
+        border: 1px solid #ed563b;
+        font-size: 18px;
+    }
+    #course-img-controls{
+        margin: 20px 0;
+    }
+    .course-card a{ /* 把頁籤標題的藍色取消 */
+        color: black;
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{ /* 把活動中的頁籤標題的設為主題色 */
+        color: #ed563b;
+    }
+    /*裁切倫播相片*/
+    .course-img{
+        width: 100%;
+        height: 0;
+        padding-bottom: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+    .course-img img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        transform:translate(-50%,-50%);          
+    }
+    .course-set-header{ /*課程方案標題大小*/
+        font-size: 20px;
+    }
+    /*調整方案大小*/
+    #tabs ul li{
+        margin-bottom: 20px;
+    }
+    #tabs ul li a{
+        padding: 30px;
+    }
+    .div-right{
+        /*position: absolute;*/
+    }
+</style>
+
+</head>
+<body>
+
+<!----- Preloader Start ----->
+<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
+
+<!----- Header Area ----->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">我就<em> 健</em></a>
+                    <!-- menu -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#">首頁</a></li>
+                        <li class="scroll-to-section"><a href="#"  class="active">探索課程</a></li>
+                        <li class="scroll-to-section"><a href="#">學員專區</a></li>
+                        <li class="scroll-to-section"><a href="#">教練專區</a></li>
+                        <li class="scroll-to-section"><a href="#">會員專區</a></li>
+                        <!-- 測試下拉 -->
+                        <li class="scroll-to-section dropdown">
+                            <a href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">Dropdown</a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action2</a></li>
+                                <li style="display: none;"><a class="dropdown-item" href="#">Action2</a></li>
+                            </ul>
+                        </li>
+                        <!-- 會員登入訊息 -->
+                        <li class="main-button"><a href="#">Sign Up</a></li>
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--------------------------------------------------------------------------------------------------->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+    	<img src="banner2.png" id="bg-video">
+        <div class="video-overlay header-text">
+            <div class="caption">
+                <h2>COURSE <em>DETAILS</em></h2>
+                <!-- <nav aria-label="breadcrumb"> -->
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">COURSE</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">COURSE DETAILS</li>
+                </ol>
+                <!-- </nav> -->
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- 回到上端 -->
+    <button id="back-to-top" class="btn btn-circle-xl"><a href="#top" class="back-to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></button>
+
+    <!-- ***** 內容開始 ***** -->
+    <section class="section" id="section-content">
+        <div class="container">
+            <div class="row justify-content-between">
+
+            <!-- Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Title -->
+                <div class="section-heading">
+                    <h2 class="mt-4">🥇私人教練最佳好評💯！增肌健身健體減脂
+                        <span class="badge badge-pill badge-theme"><em>體態雕塑</em></span>
+                    </h2>
+                </div>
+
+                <!-- 圖片聯播 -->
+                <div id="course-img-controls" class="carousel slide" data-ride="carousel" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.1)">
+                    <!-- 圖片src -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item course-img active">
+                            <img src="people/1_1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item course-img">
+                            <img src="people/1_2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item course-img">
+                            <img src="people/1_3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <!-- 圖片控制 -->
+                    <a class="carousel-control-prev" href="#course-img-controls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#course-img-controls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <!-- 課程 -->
+                <div class="card course-card" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.1)">
+                    <!-- 分頁header -->
+                    <div class="card-header border-bottom">
+                        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                            <li class="nav-item"><a class="nav-link active" data-toggle="tab" role="tab" id="myTab1" href="#myTab1Val" aria-controls="myTab1Val" aria-selected="true">課程簡介</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" id="myTab2" href="#myTab2Val" aria-controls="myTab2Val" aria-selected="false">課程評價</a></li>
+                            <li class="nav-item"><a class="nav-link disabled">課程時段</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" id="myTab4" href="#myTab4Val" aria-controls="myTab4Val" aria-selected="false">課程地點</a></li>
+                            <li class="nav-item"><a class="nav-link" data-toggle="tab" role="tab" id="myTab5" href="#myTab5Val" aria-controls="myTab5Val" aria-selected="false">授課師資</a></li>
+                        </ul>
+                    </div>
+                    <!-- 課程內容 -->
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <!-- 1課程簡介 -->
+                            <div class="tab-pane fade show active" role="tabpanel" id="myTab1Val" aria-labelledby="myTab1">
+                                <h5 class="card-title text-danger">課程簡介</h5>
+                                <p class="card-text">
+                                    身高185 健美運動員<br>
+                                    <br>
+                                    個人健身15年經驗 🥇<br>
+                                    教學12年經驗 🥇<br>
+                                    <br>
+                                    【私人健身課程】<br>
+                                    專業教練幫你在✔最短時間✔有效✔練出好身材，不分男女年齡，歡迎上課練出一身好體態！<br>
+                                    <br>
+                                    ✅增肌：一對一訓練指導，針對肌肉控制、神經連結、肌肉控制學習<br>
+                                    ✅減脂、減重：客製化個人飲食菜單，搭配週期訓練<br>
+                                    ✅體態雕塑：雕塑身形，培養運動習慣，基礎訓練內容安排<br>
+                                    <br>
+                                    教練規劃完整的訓練週期，搭配運動飲食菜單讓體態呈現效果更好🔥<br>
+                                    <br>
+                                    歡迎私訊了解<br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    ■教練1對1正確指導，不用再盲目自己苦練。<br>
+                                    ■壯碩教練以身作則，課程效果看得到。<br>
+                                    ■課後追蹤，務求完整生活改變。<br>
+                                    ■教練不會更換，全程帶你邁向目標。<br>
+                                    <br>
+                                    <br>
+                                    重視基礎 ！安全性！ 惟有最紮實的基礎才有之後的效果！！🏆<br>
+                                </p>
+                            </div>
+
+                            <!-- 2課程評論 -->
+                            <div class="tab-pane fade" role="tabpanel" id="myTab2Val" aria-labelledby="myTab2">
+                                <span class="card-title text-danger">課程評價</span>　
+                                <i class="fa fa-star-o" aria-hidden="true"></i> 
+                                <i class="fa fa-star-o" aria-hidden="true"></i> 
+                                <i class="fa fa-star-o" aria-hidden="true"></i> 
+                                <i class="fa fa-star-o" aria-hidden="true"></i> 
+                                <i class="fa fa-star-o" aria-hidden="true"></i>　
+                                4 / 5 (3則評論)
+                                <hr>
+                                <div class="card-text">
+                                    <!-- Single Comment -->
+                                    <div class="media mb-4">
+                                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                                        <div class="media-body">
+                                            <h6 class="mt-0">Commenter Name</h6>
+                                            <i class="fa fa-star text-warning" aria-hidden="true"></i> 4    
+                                            <small class="text-muted　text-right">　Posted by 2019/07/20 16:36</small>                                   
+                                            <p class="text-justify">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4上課地點 -->
+                            <div class="tab-pane fade" role="tabpanel" id="myTab4Val" aria-labelledby="myTab4">
+                                <span class="card-title text-danger">上課地點</span>　
+                                <span>桃園市中壢區</span>
+                                <hr>
+                                <div class="card-text text-center">
+                                    <!-- google map -->
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.944684012855!2d121.19001421567206!3d24.967996584003437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823c1ec904dcb%3A0xcdc129d4455ce456!2z5ZyL56uL5Lit5aSu5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1597942871318!5m2!1szh-TW!2stw" width="80%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+                            </div>
+
+                            <!-- 5教練資訊 -->
+                            <div class="tab-pane fade" role="tabpanel" id="myTab5Val" aria-labelledby="myTab5">
+                                <div class="card-text">
+                                    <div class="row m-3">
+                                        <div class="media mb-4"><img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt=""></div>
+                                        <span class="card-title text-danger bottom">凱文</span>
+                                    </div>
+                                    <div class="row m-3">                                                                      
+                                        <p class="text-justify">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-lg-4 div-right">
+                <div class="section-heading"><h4 class="mt-4 course-set-header font-weight-bold">課程方案</h4></div>
+                <div class="text-center mb-3"><img src="assets/images/line-dec.png" alt=""></div>
+
+                <div id="tabs">
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">10堂</h6>
+                                <small class="text-muted">NT$ 20,000</small>
+                            </div>
+                            <span>
+                                <span class="small">平均 </span>
+                                <span class="theme-colors">NT$ 999</span>
+                                <span class="small"> /堂</span>
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="row align-items-center">
+                        <div class="col-8 main-rounded-button"><a href="#">聯絡教練</a></div>
+                        <div class="col-2 addHeart" value="0" style="font-size: 19px">
+                            <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-2 reportCourse" value="0" style="font-size: 19px">
+                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+        </div>
+      </div>
+    </section>
+    <!-- ***** 內容結束 ***** -->
+    
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Footer Area ----->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; 2020 Training Studio
+                    - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<script type="text/javascript">
+    // 愛心
+    $(document).ready(function() {
+
+        $('.addHeart').click(function(){
+            var val = $(this).val();
+            if(val % 2 === 0){
+                $(this).html('<i class="fa fa-heart" aria-hidden="true"></i>');
+                $(this).css("color","#ed563b");
+                $(this).val('1');
+                swal('漂亮！', '成功加入課程最愛', 'success');
+            }else{
+                $(this).html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+                $(this).css("color","");
+                $(this).val('0');
+            };                    
+        });
+        $('.reportCourse').click(function(){
+            var val = $(this).val();
+            if(val % 2 === 0){
+                $(this).html('<i class="fa fa-thumbs-down" aria-hidden="true"></i>');
+                $(this).css("color","#ed563b");
+                $(this).val('1');
+
+                swal({
+                  title: "檢舉課程",
+                  text: "請輸入檢舉原因：",
+                  type: "input",
+                  showCancelButton: false,
+                  closeOnConfirm: false,
+                  allowOutsideClick: true,
+                  animation: "slide-from-top",
+                  inputPlaceholder: "輸入一些話"
+                },
+                function(inputValue){
+                  if (inputValue === false) returnfalse;
+                  
+                  if (inputValue === "") {
+                    swal.showInputError("你需要輸入檢舉原因！");
+                    return false
+                  }
+                  
+                  swal("成功！", "你成功檢舉了課程代碼：" + inputValue,"success");
+                });
+
+            }else{
+                swal('錯誤！', '您已檢舉過', 'error');
+            };                    
+        });
+    });
+</script>
+
+</body>
+</html>

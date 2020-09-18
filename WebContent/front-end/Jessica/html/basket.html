@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>EA102G3｜課程購物車</title>
+
+<!-- Additional CSS Files -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"> <!-- v4.3.1 -->
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css"> <!-- v4.7.0 -->
+<link rel="stylesheet" href="assets/css/templatemo-training-studio.css">
+<!-- form驗證 -->
+<link rel="stylesheet" href="assets/css/form-validation.css">
+<!-- jquery.step -->
+<link rel="stylesheet" href="assets/css">
+
+
+<style>
+    /*測試nav下拉*/
+    .dropdown-menu li:hover .sub-menu {visibility: visible;}
+    .dropdown:hover .dropdown-menu {display: block;}
+    /*調整標題*/
+    #bg-video{
+        min-height: 30vh;
+        max-height: 30vh;
+    }
+    .main-banner .caption{
+        top: 60%;
+    }
+    .main-banner .caption h2 {
+        font-size: 40px;
+    }
+    .video-overlay {
+        bottom: 0;
+    }
+    /*調整區塊間的高度*/
+    .section-heading {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    /*副標的麵包屑*/
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .breadcrumb a{
+        color: white;
+    }
+    .breadcrumb-item.active {
+        color: lightgray;
+    }
+    /*主題色，字體改了方片用*/
+    .theme-colors{
+        color: #ed563b;
+    }
+    /*回到最上面*/
+    .back-to-top{
+        font-size: 30px;
+        color: #ed563b;
+    }
+    #back-to-top{
+        position: fixed;
+        bottom: 10vh;
+        right: 20vh;
+    }
+    .btn-circle-xl {
+        width: 60px;
+        height: 60px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 35px;
+        border: 1px solid #ed563b;
+    }
+    #section-content{
+        margin-top: 50px;
+    }
+
+    /*裁切課程相片*/
+    .course-img{
+        width: 80px;
+        height: 0;
+        padding-bottom: 80px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    .course-img img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+        transform:translate(-50%,-50%);          
+    }
+    button a{
+        color: white;
+    }
+    #backBtn{
+        background-color: white;
+        color: #ed563b;
+        border: 1px solid #ed563b;
+    }
+    #step{
+        margin-top: 60px;
+    }
+
+</style>
+</head>
+
+<body>
+<!----- Preloader Start ----->
+<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
+
+<!----- Header Area ----->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">我就<em> 健</em></a>
+                    <!-- menu -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#">首頁</a></li>
+                        <li class="scroll-to-section"><a href="#"  class="active">探索課程</a></li>
+                        <li class="scroll-to-section"><a href="#">學員專區</a></li>
+                        <li class="scroll-to-section"><a href="#">教練專區</a></li>
+                        <li class="scroll-to-section"><a href="#">會員專區</a></li>
+                        <!-- 測試下拉 -->
+                        <li class="scroll-to-section dropdown">
+                            <a href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">Dropdown</a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action2</a></li>
+                                <li style="display: none;"><a class="dropdown-item" href="#">Action2</a></li>
+                            </ul>
+                        </li>
+                        <!-- 會員登入訊息 -->
+                        <li class="main-button"><a href="#">Sign Up</a></li>
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!----- Main Banner Area ----->
+<div class="main-banner" id="top">
+    <!-- Banner Img -->
+    <img src="course-banner.png" id="bg-video">
+    <div class="video-overlay header-text">
+        <!-- 麵包屑 -->
+        <div class="caption">
+            <h2>COURSE <em>CHECKOUT</em></h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">COURSE</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">COURSE CHECKOUT</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<!----- Back to Top ----->
+<!-- <button id="back-to-top" class="btn btn-circle-xl"><a href="#top" class="back-to-top"><i class="fa fa-angle-up" aria-hidden="true"></i></a></button> -->
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!----- 付款step ----->
+<section class="section" id="step">
+  <div class="container">
+    <div class="row justify-content-center text-center align-self-center">
+        <div class="col-8">
+            <div class="row">
+                <div class="col font-weight-bold">
+                    <span class="badge badge-primary">1</span>
+                    <span>　課程結帳</span>
+                </div>
+                <div class="col-1">
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </div>
+                <div class="col text-muted">
+                    <span class="badge badge-light">2</span>
+                    <span>　金流付款</span>            
+                </div>
+                <div class="col-1">
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </div>
+                <div class="col text-muted">
+                    <span class="badge badge-light">3</span>
+                    <span>　完成</span>            
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!----- Content Area ----->
+<section class="section" id="section-content">
+  <div class="container bg-light">
+    <div class="row my-5"></div> <!-- 撐高度用 -->
+
+    <!----- 購物車 ----->
+
+    <!-- 購物車小標 -->
+    <div class="row mt-6">
+        <div class="col-lg-6 offset-lg-3"><div class="section-heading mb-0">
+            <h2>Your<em> Cart</em></h2>
+            <img src="assets/images/line-dec.png" alt="">
+        </div></div>
+    </div>
+    <!-- 購物車課程 -->
+    <div class="row mx-4 mt-2">
+        <table class="table bg-white py-4 mt-3">
+            <thead>
+                <tr>
+                    <th colspan="2">課程</th>
+                    <th>堂數</th>
+                    <th>單堂價格</th>
+                    <th>小計</th>
+                    <th>刪除</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- 課程圖片 -->
+                    <td> 
+                        <div class="course-img">
+                            <img class="img-fluid" src="people/1_1.jpg">
+                        </div>                                
+                    </td>
+                    <!-- 課程名稱 -->
+                    <td class="theme-colors pl-0">
+                        <strong>🥇私人教練最佳好評💯！增肌健身健體減脂</strong>
+                    </td>
+                    <!-- 課程方案 -->
+                    <td>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>10堂</option>
+                                <option>20堂</option>
+                            </select>
+                        </div>
+                    </td>
+                    <!-- 單堂價格 -->
+                    <td>
+                        <div class="text-right"><del>NT$777/堂</del></div>
+                        <div class="text-right"><span class="text-danger">NT$666/堂</span></div>
+                    </td>
+                    <!-- 課程總價 -->
+                    <td class="text-right">NT$20,000</td>
+                    <!-- 垃圾桶 -->
+                    <td><i class="fa fa-trash-o" aria-hidden="true"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 優惠券 -->
+    <div class="row mx-4 mt-1 mb-4 py-3 bg-white">
+        <div class="col-3">
+            <input type="text" class="form-control" placeholder="我有優惠券">
+        </div>
+        <div class="col-2">
+            <button class="btn btn-light" type="button">使用</button>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-4">
+            <div class="text-right">
+                折價 <span class="text-success">- NT$ 
+                            <span>100</span>
+                     </span>
+            </div>
+            <div class="text-right"><strong>結帳金額　NT $<span>19,900</span></strong></div>
+        </div>
+    </div>
+
+    <!-- RPG選項 -->
+    <div class="row mx-4 mt-1 mb-5 py-3">
+        <div class="col-6"></div>
+        <div class="col-3 contact-form">
+            <button class="btn btn-primary btn-lg btn-block" id="backBtn">繼續逛課</button>  
+        </div>
+        <div class="col-3 mb-5 contact-form">
+            <a href="#payment"><button class="btn btn-primary btn-lg btn-block" id="goCheckoutBtn">前往付款</button></a>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- ***** 內容結束 ***** -->
+
+<!-- ***** Footer Start ***** -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; 2020 Training Studio                    
+                - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Plugins -->
+<script src="assets/js/scrollreveal.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/imgfix.min.js"></script> 
+<script src="assets/js/mixitup.js"></script> 
+<script src="assets/js/accordions.js"></script>    
+<!-- Global Init -->
+<script src="assets/js/custom.js"></script>
+<!-- 驗證 -->
+<script src="assets/js/form-validation.js"></script>
+<!-- jquery.step.min.js -->
+<script src="assets/js/jquery.steps.min.js"></script>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+
+    });
+</script>
+
+</body>
+</html>

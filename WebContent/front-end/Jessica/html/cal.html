@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EA102G3｜約課</title>
+<!--------------------------------------------------------------------------------------------------->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+
+<!-- CSS Files -->
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"> <!-- v4.3.1 -->
+<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.css"> <!-- v4.7.0 -->
+<link rel="stylesheet" href="../static/css/templatemo-training-studio.css"> <!-- 主題CSS -->
+
+<!-- JS Files -->
+<!-- jQuery -->
+<script src="../static/js/jquery-2.1.0.min.js"></script>
+<!-- Bootstrap -->
+<script src="../static/js/popper.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- Plugins -->
+<script src="../static/js/scrollreveal.min.js"></script>
+<script src="../static/js/waypoints.min.js"></script>
+<script src="../static/js/jquery.counterup.min.js"></script>
+<script src="../static/js/imgfix.min.js"></script> 
+<script src="../static/js/mixitup.js"></script> 
+<script src="../static/js/accordions.js"></script>
+<!-- Global Init -->
+<script src="../static/js/custom.js"></script>
+<style>
+    /*測試nav下拉*/
+    .dropdown-menu li:hover .sub-menu {visibility: visible;}
+    .dropdown:hover .dropdown-menu {display: block;}
+    /*調整標題*/
+    #bg-video{
+        min-height: 30vh;
+        max-height: 30vh;
+    }
+    .main-banner .caption{
+        top: 60%;
+    }
+    .main-banner .caption h2 {
+        font-size: 40px;
+    }
+    .video-overlay {
+        bottom: 0;
+    }
+    /*調整區塊間的高度*/
+    .section-heading {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    /*副標的麵包屑*/
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .breadcrumb a{
+        color: white;
+    }
+    .breadcrumb-item.active {
+        color: lightgray;
+    }
+    /*字體主題色*/
+    .theme-colors{
+        color: #ed563b;
+    }
+    /*回到最上面*/
+    .back-to-top{
+        font-size: 30px;
+        color: #ed563b;
+    }
+    #back-to-top{
+        position: fixed;
+        bottom: 10vh;
+        right: 20vh;
+    }
+    .btn-circle-xl {
+        width: 60px;
+        height: 60px;
+        padding: 10px 16px;
+        font-size: 24px;
+        line-height: 1.33;
+        border-radius: 35px;
+        border: 1px solid #ed563b;
+    }
+    /*調整內容上距*/
+    #section-content{
+        margin-top: 50px;
+    }
+</style>
+
+<!--------------------------------------------------------------------------------------------------->
+<link rel='stylesheet' type='text/css' href='../static/css/fullcal-main.min.css' />
+<script type='text/javascript' src='../static/js/fullcal-main.min.js'></script>
+<script type='text/javascript' src='../static/js/fullcal-locales-all.min.js'></script>
+<style>
+    /*調整標題*/
+    #bg-video{
+        min-height: 80px;
+        max-height: 80px;
+    }
+    .main-banner .caption{
+        top: 60%;
+    }
+    #section-content{
+        margin-top: 25px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<!----- Preloader Start ----->
+<div id="js-preloader" class="js-preloader"><div class="preloader-inner"><span class="dot"></span><div class="dots"><span></span><span></span><span></span></div></div></div>
+
+<!----- Header Area ----->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">我就<em> 健</em></a>
+                    <!-- menu -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#">首頁</a></li>
+                        <li class="scroll-to-section"><a href="#"  class="active">探索課程</a></li>
+                        <li class="scroll-to-section"><a href="#">學員專區</a></li>
+                        <li class="scroll-to-section"><a href="#">教練專區</a></li>
+                        <li class="scroll-to-section"><a href="#">會員專區</a></li>
+                        <!-- 測試下拉 -->
+                        <li class="scroll-to-section dropdown">
+                            <a href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="ture">Dropdown</a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action2</a></li>
+                                <li style="display: none;"><a class="dropdown-item" href="#">Action2</a></li>
+                            </ul>
+                        </li>
+                        <!-- 會員登入訊息 -->
+                        <li class="main-button"><a href="#">Sign Up</a></li>
+                    </ul>        
+                    <a class='menu-trigger'><span>Menu</span></a>                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Main Banner Area ----->
+<div class="main-banner" id="top">
+	<img src="" id="bg-video">
+    <div class="video-overlay header-text"></div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!----- Content Area ----->
+<section class="section" id="section-content">
+    <div class="container">
+        <div class="row">
+
+            <aside class="col-sm-2">
+                <p>Filter 1</p>
+                <div class="card">
+                    <!-- 單一 -->
+                    <article class="card-group-item">
+                        <header class="card-header"><h6 class="title">我的1對1課程</h6></header>
+                        <div class="card-body">
+                            <form>
+                                <label class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-label">Mersedes Benz</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-label">Nissan Altima</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-label">Another Brand</span>
+                                </label>
+                            </form>
+                        </div>                        
+                    </article>
+                    <!-- 單一 -->
+                    <article class="card-group-item">
+                        <header class="card-header"><h6 class="title">我的團體課程</h6></header>
+                        <div class="card-body">
+                            <form>
+                                <label class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-label">Mersedes Benz</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-label">Nissan Altima</span>
+                                </label>
+                                <label class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-label">Another Brand</span>
+                                </label>
+                            </form>
+                        </div>                        
+                    </article>
+                </div>
+            </aside>
+
+            <div class="col-sm-10"><div id='calendar'></div></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="addCDateModal" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">新增約課</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <form id="addCDateForm">
+                    <table>
+                        <tr>
+                            <td>課程名稱</td>
+                            <td>
+                                <input class="form-control" type="text" id="eName" value="某某課程">
+                                <input type="hidden" id="order_id">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>開始時間</td>
+                            <td>
+                                <select class="custom-select mr-sm-2" id="eStart">
+                                    <option selected>選擇時間</option>
+                                    <option value="00">00:00</option>
+                                    <option value="01">01:00</option>
+                                    <option value="02">02:00</option>
+                                    <option value="03">03:00</option>
+                                    <option value="04">04:00</option>
+                                    <option value="05">05:00</option>
+                                    <option value="06">06:00</option>
+                                    <option value="07">07:00</option>
+                                    <option value="08">08:00</option>
+                                    <option value="09">09:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>結束時間</td>
+                            <td><input class="form-control" type="text" id="eEnd" value="" readonly></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" id="addCDateSubmit">Yes!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--------------------------------------------------------------------------------------------------->
+
+<!----- Footer Area ----->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; 2020 Training Studio
+                    - Designed by <a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent">TemplateMo</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--------------------------------------------------------------------------------------------------->
+
+<script>
+
+$('#eStart').change(function(){
+    var val = parseInt($(this).val()) + 1;
+    val = (val < 10) ? '0'+val : val;
+    $('#eEnd').val(val + ':00');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+	var calendarEl = document.getElementById('calendar');
+
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+
+	customButtons: { // 自定義btn
+		myAddButton: {
+			text: '新增約課',
+			click: function() {
+				alert('clicked the custom button!');
+			}
+		}
+	},
+	headerToolbar: { // header
+		left: 'prev,next today myAddButton',
+		center: 'title',
+		right: 'dayGridMonth,timeGridWeek,timeGridDay'
+	},
+
+	navLinks: true, // 允許天名稱是否可點擊，點了跳到單頁
+
+	selectable: true, // 可不可點來觸發新增事件
+	selectMirror: true,
+	selectConstraint: { // 限制可以選的時間
+		start: '2020-09-11T00:00', 
+	  	end: '2020-12-31T24:00'
+	},
+
+	select: function(arg) {
+        $('#addCDateModal').modal('show');
+        $('#addCDateSubmit').unbind('click').click(function() {});
+
+        $('#addCDateSubmit').click(function(){
+            var order_id = $('#order_id').val();
+            var cdate = arg.startStr;
+            var ctime = $('#eStart').val();
+
+             $.ajax({
+                 type: 'POST',
+                 url: 'http://localhost:8081/EA102G3/course/courseDate.do?action=addCDate',
+                 data: { 'order_id':order_id, 'cdate':cdate, 'ctime':ctime },
+                 success: function (data){
+                    alert('成功');
+                 },
+                 error: function(xhr, ajaxOptions, thrownError){
+                     console.log(xhr.status);
+                     console.log(thrownError);
+                 }
+            });
+
+        });
+	},
+
+	editable: false, // 可不可改
+	dayMaxEvents: false, // more...太多不顯示
+
+	eventClick: function(info) {
+    	console.log('title='+info.event.title);
+    	console.log('url='+info.event.url);
+    	console.log('start='+info.event.start);
+    	console.log('end='+info.event.end);
+
+	    // if (confirm('Are you sure you want to delete this event?')) {
+	    // 	info.event.remove()
+	    // }
+	},
+
+	eventTimeFormat: { // 事件24小時制HH:mm
+	  	hour: '2-digit',
+	  	minute: '2-digit',
+	  	meridiem: false,
+	  	hour12: false
+	},
+	// 設定看一天的
+	slotDuration: '01:00:00', // 時間間隔
+	slotLabelFormat: { // 24小時制HH:mm
+	  	hour: '2-digit',
+	  	minute: '2-digit',
+	  	meridiem: false,
+	  	hour12: false
+	},
+	slotEventOverlap: false, // 事件不可以重疊
+
+//------------------------------
+    eventSources: [
+     	'http://localhost:8081/EA102G3/course/courseDate.do?action=showCal'
+	]
+
+    
+});
+	calendar.render();
+});
+
+
+
+</script>
+
+</body>
+</html>

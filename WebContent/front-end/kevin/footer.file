@@ -1,0 +1,42 @@
+<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<img class="footerimg" src="images/tick.png"> <img
+						class="footerimg" src="images/message.png"> <img
+						class="footerimg" src="images/mail.png"> <img
+						class="footerimg" src="images/dot.png"> <img
+						class="footerimg" src="images/instagram-b.png"> <img
+						class="footerimg" src="images/facebook-b.png">
+
+					<p>
+						Copyright &copy; 2020 Training Studio - Modify by <a
+							rel="nofollow" href="https://reurl.cc/yZ22W2"
+							class="tm-text-link" target="_parent">FatBoy</a>
+					</p>
+					<!-- You shall support us a little via PayPal to info@templatemo.com -->
+
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/jquery-2.1.0.min.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/popper.js"></script>
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/bootstrap.min.js"></script>
+
+	<!-- Plugins -->
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/scrollreveal.min.js"></script>
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/waypoints.min.js"></script>
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/jquery.counterup.min.js"></script>
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/imgfix.min.js"></script>
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/mixitup.js"></script>
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/accordions.js"></script>
+
+	<!-- Global Init -->
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/custom.js"></script>

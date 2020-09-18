@@ -1,0 +1,57 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
+<script>
+			var websocket = null;
+			var memberCount=0;
+			if(${empChatId==null}){
+				var MyPoint = "/websocket/"+memberCount;
+				memberCount++;
+			}else{
+				var MyPoint = "/websocket/${empChatId}";
+			}
+			var host = window.location.host;
+			var path = window.location.pathname;
+			var webCtx = path.substring(0, path.indexOf('/', 1));
+			var endPointURL = "ws://" + window.location.host + webCtx + MyPoint;
+			//判斷當前瀏覽器是否支援WebSocket
+			console.log(endPointURL);
+			function connect() {
+			if ('WebSocket' in window) {
+				websocket = new WebSocket(endPointURL);
+			} else {
+				alert('當前瀏覽器 Not support websocket')
+			}
+			websocket.onmessage = function(event) {
+				var jsonObj = JSON.parse(event.data);
+				var message = jsonObj.userName + ": " + jsonObj.message + "\r\n";
+				Swal.fire({
+					  title: '現在有新的最新消息發佈了!!，趕緊快去看最新消息',
+					  width: 600,
+					  padding: '3em',
+					  background: '#fff url(<%--<%=request.getContextPath()%>/front-end/css/images/sweet.png--%>)',
+					  backdrop: `
+					    rgba(0,0,123,0.4)
+					    url("<%=request.getContextPath()%>/front-end/css/images/cat.gif")
+					    left top
+					    no-repeat
+					  `
+					})
+			};
+		}
+			function sendMessage() {
+                var empChatId = "${empChatId}";
+				var inputMessage = "被我抓到惹";
+				var message = inputMessage.value;
+
+					var jsonObj = {
+						"empChatId" : empChatId,
+						"message" : message
+					};
+					websocket.send(JSON.stringify(jsonObj));
+					inputMessage.value = "";
+				}
+			
+			function disconnect() {
+				memberCount--;
+				websocket.close();
+			}
+			</script>

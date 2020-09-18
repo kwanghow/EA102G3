@@ -1,0 +1,27 @@
+
+<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/jquery-2.1.0.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/popper.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/front-end/kevin/css/js/bootstrap.min.js"></script>
+
+	<!-- Plugins -->
+	<script
+		src="<%=request.getContextPath()%>/front-end/kevin/css/js/scrollreveal.min.js"></script>
+	
+	<!--
+	<script
+		src="<%=request.getContextPath()%>/front-end/kevin/css/js/waypoints.min.js"></script>
+	-->	
+		
+		
+	<script
+		src="<%=request.getContextPath()%>/front-end/kevin/css/js/jquery.counterup.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/front-end/kevin/css/js/imgfix.min.js"></script>
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/mixitup.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/front-end/kevin/css/js/accordions.js"></script>
+
+	<!-- Global Init -->
+	<script src="<%=request.getContextPath()%>/front-end/kevin/css/js/custom.js"></script>
